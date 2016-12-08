@@ -1,0 +1,59 @@
+
+.Name {
+ text-align: left;
+ padding-bottom: 1px;
+ padding-top: 1px;
+ padding-left: 1px;
+ padding-right: 1px;
+}
+
+.Age {
+ text-align: left;
+ padding-bottom: 1px;
+ padding-top: 1px;
+ padding-left: 1px;
+ padding-right: 1px;
+}
+.num {
+ text-align: left;
+ padding-bottom: 1px;
+ padding-top: 1px;
+ padding-left: 1px;
+ padding-right: 1px;  
+}
+
+.Card {
+ background-color: gray;
+ margin: 15px;
+ padding : 15px;
+ text-align: left;
+ border: 1px solid white;
+}
+
+.Deletebutton {
+    margin-right: 25pc;
+    text-align: left;
+    padding-bottom: 1pc;
+    padding-top: 1pc;
+    padding-left: 2pc;
+    padding-right: 2pc; 
+}
+.Editbutton {
+    margin-left: 10pc;
+    text-align: right;
+    padding-bottom: 1pc;
+    padding-top: 1pc;
+    padding-left: 2pc;
+    padding-right: 2pc; 
+    
+}
+.Cards{
+    border: 1px solid black;
+    background-color: black;
+    padding: 5px;
+    margin: 5px;
+    /*margin-bottom: 1pc;
+    margin-top: 1pc;*/
+    margin-left: 1pc;
+  /*  margin-right: 1pc;*/
+}

@@ -1,23 +1,26 @@
 import React, { Component } from 'react';
-import App from './App';
-import ContactList from './ContactList';
+import './Contactcard.css';
 
 class ContactCard extends Component {
     constructor(props){
         super(props);
-        this.state= {card : props.contactData }
-        this.deleteContact= this.deleteContact.bind(this);;
+        this.state={cardItem: props.contactData}
     }
-    deleteContact(e){
-        this.state.card.pop(this.props.id);
-    }
+
     render(){
-        console.log(this.state.card);
-         let contactNames = [];
-         contactNames= this.state.card;
-        return(<li><div>{contactNames}</div>
-                <button type="button" onClick={(e)=>this.deleteContact()}>Delete</button>
-                <button type="button">Edit</button></li>);
+        return(<div className='Cards'>
+                <ol>
+                <div className='Card'>
+                <div className='Name'>Name  :{this.state.cardItem.name}</div>
+                <div className='Age'> Age   :{this.state.cardItem.age}</div>
+                <div className='num'> Ph No.:{this.state.cardItem.ph_no}</div>
+                <button className='Deletebutton'>Delete</button>
+                <input type="button" className="Editbutton" value="Edit"/>
+                </div>
+                </ol>
+                <br />
+                
+                </div>);
        }
 }
 

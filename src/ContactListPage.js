@@ -1,24 +1,22 @@
 import React, { Component } from 'react';
 import ContactList from './ContactList';
+import './ContactListPage.css';
 
 class ContactListPage extends Component {
     
     constructor(props){
         super(props);
-         this.state= {contactDetails : props.data }
-         console.log(this.state.contactDetails);
+         this.state={contactDetails : props.data }
     }
 
     render(){
        return(<div>
                 <div>
                   <h1 className='App'>contact list</h1>
-                </div>
-                <div> 
-                 contacts : {this.contactDetails} 
-                </div>
+                </div> 
+                  <ContactList toItems={this.state.contactDetails} />
                 <div>
-                  <button type="button">add new</button>
+                  <button className='AddButton'>add new</button>
                 </div>
               </div>);
     }
