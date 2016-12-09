@@ -1,6 +1,6 @@
 
 .Name {
- text-align: left;
+ 
  padding-bottom: 1px;
  padding-top: 1px;
  padding-left: 1px;
@@ -8,18 +8,24 @@
 }
 
 .Age {
- text-align: left;
+
  padding-bottom: 1px;
  padding-top: 1px;
  padding-left: 1px;
  padding-right: 1px;
 }
 .num {
- text-align: left;
+ 
  padding-bottom: 1px;
  padding-top: 1px;
  padding-left: 1px;
  padding-right: 1px;  
+}
+.id {
+ padding-bottom: 1px;
+ padding-top: 1px;
+ padding-left: 1px;
+ padding-right: 1px; 
 }
 
 .Card {
