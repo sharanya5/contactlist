@@ -27,25 +27,34 @@
  padding-left: 1px;
  padding-right: 1px; 
 }
+.foredit{
+    padding-left: 45pc;
+    visibility: hidden;
+    
+}
 
 .Card {
  background-color: gray;
- margin: 15px;
- padding : 15px;
+ padding-bottom: 1pc;
+ padding-top: 1pc;
+ padding-left: 3pc;
+ padding-right: 3pc;
  text-align: left;
  border: 1px solid white;
+ position: absolute;
 }
 
 .Deletebutton {
-    margin-right: 25pc;
-    text-align: left;
+    /*margin-right: 25pc;
+    margin-bottom: 1px;*/
     padding-bottom: 1pc;
     padding-top: 1pc;
     padding-left: 2pc;
-    padding-right: 2pc; 
+    padding-right: 2pc;
+    position: absolute;
 }
 .Editbutton {
-    margin-left: 10pc;
+    margin-left: 45pc;
     text-align: right;
     padding-bottom: 1pc;
     padding-top: 1pc;
@@ -58,6 +67,7 @@
     background-color: black;
     padding: 5px;
     margin: 5px;
+    padding-right: 45pc;
     /*margin-bottom: 1pc;
     margin-top: 1pc;*/
     margin-left: 1pc;

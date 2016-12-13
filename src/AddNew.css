@@ -1,0 +1,35 @@
+.addButton{
+    position: absolute;
+    padding-bottom: 1pc;
+     padding-top: 1pc;
+     padding-left: 2pc;
+     padding-right: 2pc; 
+}
+
+.resetButton{
+    position: absolute;
+    margin-left: 10pc;
+    padding-bottom: 1pc;
+     padding-top: 1pc;
+     padding-left: 2pc;
+     padding-right: 2pc;
+}
+
+.header{
+    text-align: center;
+}
+ 
+.firstdiv{
+     padding-bottom: 1pc;
+     padding-top: 1pc;
+     padding-left: 2pc;
+     padding-right: 2pc;    
+}
+
+.secdiv{
+     padding-bottom: 1pc;
+     padding-top: 1pc;
+     padding-left: 2pc;
+     padding-right: 2pc;
+     text-align: left;
+}

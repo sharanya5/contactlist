@@ -16,7 +16,7 @@ class ContactListPage extends Component {
                 </div> 
                   <ContactList toItems={this.state.contactDetails} />
                 <div>
-                  <button className='AddButton'>add new</button>
+                  <button className='AddButton'><a href='/AddNew'>Add New contact</a></button>
                 </div>
               </div>);
     }

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
 import './App.css';
 import ContactListPage from './ContactListPage';
 
@@ -21,7 +22,7 @@ class App extends Component {
                                       age : 23,
                                       ph_no : 121212 } } ];
     return ( <div>
-              <ContactListPage data={ contacts }  /> 
+               <ContactListPage data={ contacts }  />
             </div>);
   }
 }
