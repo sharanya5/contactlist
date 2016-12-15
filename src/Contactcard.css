@@ -29,28 +29,28 @@
 }
 .foredit{
     padding-left: 45pc;
-    visibility: hidden;
+    visibility: visible;
     
 }
 
 .Card {
  background-color: gray;
- padding-bottom: 1pc;
- padding-top: 1pc;
+ padding-bottom: 0.5pc;
+ padding-top: 0.5pc;
  padding-left: 3pc;
  padding-right: 3pc;
+ margin-left: 8pc;
  text-align: left;
  border: 1px solid white;
  position: absolute;
 }
 
 .Deletebutton {
-    /*margin-right: 25pc;
-    margin-bottom: 1px;*/
     padding-bottom: 1pc;
     padding-top: 1pc;
     padding-left: 2pc;
     padding-right: 2pc;
+    margin-left: 8pc;
     position: absolute;
 }
 .Editbutton {

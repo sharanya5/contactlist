@@ -3,10 +3,10 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import AddNew from './AddNew';
 import './index.css';
-import { Route, browserHistory, Router,IndexRoute } from 'react-router';
+import { Route, browserHistory, Router } from 'react-router';
 
 ReactDOM.render((
-<Router history = {browserHistory}>
+<Router history={browserHistory}>
         <Route path="/" component={ App }/>
         <Route path="/AddNew" component={ AddNew } />
 </Router>
