@@ -21,16 +21,73 @@
  padding-left: 1px;
  padding-right: 1px;  
 }
+
 .id {
  padding-bottom: 1px;
  padding-top: 1px;
  padding-left: 1px;
  padding-right: 1px; 
 }
+
 .foredit{
-    padding-left: 45pc;
+    padding-left: 45pc;  
+    visibility : hidden; 
+    margin-left: 45pc;
+}
+
+.addButton{
+    position: absolute;
+    padding-bottom: 1pc;
+     padding-top: 1pc;
+     padding-left: 2pc;
+     padding-right: 2pc; 
+}
+
+.resetButton{
+    position: absolute;
+    margin-left: 10pc;
+    padding-bottom: 1pc;
+     padding-top: 1pc;
+     padding-left: 2pc;
+     padding-right: 2pc;
+}
+
+.addContactButton{
+    position: absolute;
+    margin-left: 35pc;
+    padding-bottom: 1pc;
+    padding-top: 1pc;
+    padding-left: 2pc;
+    padding-right: 2pc;
+}
+
+.visible {
     visibility: visible;
-    
+}
+
+.makeVisible{
+    visibility : visible ;
+}
+
+.header{
+    text-align: center;
+}
+ 
+.firstdiv{
+     padding-bottom: 1pc;
+     padding-top: 1pc;
+     padding-left: 2pc;
+     padding-right: 2pc; 
+     visibility: hidden;   
+}
+
+.secdiv{
+     padding-bottom: 1pc;
+     padding-top: 1pc;
+     padding-left: 2pc;
+     padding-right: 2pc;
+     text-align: left;
+     
 }
 
 .Card {
