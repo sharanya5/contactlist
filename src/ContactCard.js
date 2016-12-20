@@ -8,6 +8,7 @@ constructor(props) {
     super(props);
     this.state={ cardItem: props.contactData, editMode: false }
     this.newCard=this.newCard.bind(this);
+    this.formDisplay=this.formDisplay.bind(this);
 }
 
 newCard(e, field)  {
@@ -25,7 +26,6 @@ formDisplay(e, id){
 }
 
 render() {
-    var id=this.state.cardItem.id;
     var cls = 'foredit' + (this.state.editMode ? 'visible' : '')
     return(
         <div className='Cards' >
@@ -44,7 +44,7 @@ render() {
                         <input className='num' value={this.state.cardItem.ph_no} onChange={(e)=>this.newCard(e,'ph_no')}/>
                     </div>
                     <div>
-                        <button className='Deletebutton' onClick={()=>this.props.deleteCard(id)}>Delete</button>
+                        <button className='Deletebutton' onClick={()=>this.props.deleteCard(this.state.cardItem.id)}>Delete</button>
                         <input type="button" className="Editbutton" value="Edit" onClick={(e)=>this.formDisplay(e,'id')}/>
                     </div>
                 </ol>

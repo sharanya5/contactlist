@@ -29,8 +29,7 @@
  padding-right: 1px; 
 }
 
-.foredit{
-    padding-left: 45pc;  
+.foredit{ 
     visibility : hidden; 
     margin-left: 45pc;
 }
@@ -38,18 +37,18 @@
 .addButton{
     position: absolute;
     padding-bottom: 1pc;
-     padding-top: 1pc;
-     padding-left: 2pc;
-     padding-right: 2pc; 
+    padding-top: 1pc;
+    padding-left: 2pc;
+    padding-right: 2pc; 
 }
 
 .resetButton{
     position: absolute;
     margin-left: 10pc;
     padding-bottom: 1pc;
-     padding-top: 1pc;
-     padding-left: 2pc;
-     padding-right: 2pc;
+    padding-top: 1pc;
+    padding-left: 2pc;
+    padding-right: 2pc;
 }
 
 .addContactButton{

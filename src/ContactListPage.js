@@ -3,11 +3,6 @@ import ContactList from './ContactList';
 import './ContactListPage.css';
 
 class ContactListPage extends Component {
-    
-  constructor(props) {
-      super(props);
-         this.state = { contactDetails : props.data , toAdd : false }
-  }
 
   render() {
 
@@ -15,7 +10,7 @@ class ContactListPage extends Component {
                   <div>
                     <h1 className='App'>contact list</h1>
                       </div> 
-                        <ContactList toItems={this.state.contactDetails} />
+                        <ContactList toItems={ this.props.data } />
                       <div>
                     <button className='AddButton'><a href='/AddNew'>Add New contact</a></button>
                  </div>
