@@ -1,18 +1,24 @@
 import React, { Component } from 'react';
 import ContactCard from './ContactCard';
 import { fromJS } from 'immutable';
+import { actions } from './redux/ContactList';
+import { connect } from 'react-redux';
 
 class ContactList extends Component {
     
     constructor(props) {
         super(props);
-            this.state = { contactItems: props.contactList, newItem: fromJS({}) , showAddContactCardFlag : false }
-            this.deleteCard = this.deleteCard.bind(this);
-            this.editCard =  this.editCard.bind(this);
-            this.addNewContactCard = this.addNewContactCard.bind(this);
-            this.addContactCard = this.addContactCard.bind(this);
-            this.showAddContactCardForm = this.showAddContactCardForm.bind(this);
-            this.resetForm = this.resetForm.bind(this);
+        this.state = { newItem: fromJS({}) , showAddContactCardFlag : false };
+        this.deleteCard = this.deleteCard.bind(this);
+        this.editCard =  this.editCard.bind(this);
+        this.addNewContactCard = this.addNewContactCard.bind(this);
+        this.addContactCard = this.addContactCard.bind(this);
+        this.showAddContactCardForm = this.showAddContactCardForm.bind(this);
+        this.resetForm = this.resetForm.bind(this);
+    }
+
+    componentWillMount() {
+        this.props.initialList();
     }
 
     deleteCard(id) {
@@ -62,8 +68,8 @@ class ContactList extends Component {
 
     render() {
         let returnObj=[];
-        this.state.contactItems.forEach(function(item) {
-                returnObj.push(<ContactCard 
+        this.props.ContactList.forEach(function(item) {
+                returnObj.push(<ContactCard
                 key={item.get('id')}
                 contactData={item.toJS()} 
                 deleteCard={this.deleteCard}
@@ -95,4 +101,14 @@ class ContactList extends Component {
     }
 }
 
-export default ContactList; 
+const mapStateToProps = (state) => {
+    return {
+        ContactList: state.ContactList
+    }
+};
+
+const ContactListComponent = connect(
+    mapStateToProps,
+    actions
+)(ContactList);
+export default ContactListComponent;
