@@ -6,7 +6,7 @@ class ContactCard extends Component {
     
 constructor(props) {
     super(props);
-    this.state={ cardItem: props.contactData, editMode: false }
+    this.state={ cardItem: props.contactData, editMode: false };
     this.newFieldValue=this.newFieldValue.bind(this);
     this.displayEditableFields=this.displayEditableFields.bind(this);
 }
@@ -21,12 +21,12 @@ componentWillReceiveProps(nextProps) {
     this.setState({ cardItem: nextProps.contactData })
 }
 
-displayEditableFields(e, id){
+displayEditableFields(){
     this.setState({editMode : !this.state.editMode})
 }
 
 render() {
-    var cls = (this.state.editMode ? 'visible' : 'foredit')
+    var cls = (this.state.editMode ? 'visible' : 'hidden');
     return(
         <div className='Cards' >
                 <ol>
@@ -45,7 +45,7 @@ render() {
                     </div></li>
                     <div>
                         <button className='Deletebutton' onClick={()=>this.props.deleteCard(this.state.cardItem.id)}>Delete</button>
-                        <input type="button" className="Editbutton" value="Edit" onClick={(e)=>this.displayEditableFields(e,'id')}/>
+                        <input type="button" className="Editbutton" value="Edit" onClick={()=>this.displayEditableFields()}/>
                     </div>
                 </ol>
             </div>
