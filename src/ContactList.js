@@ -22,7 +22,8 @@ class ContactList extends Component {
     }
 
     deleteCard(id) {
-        let newContactItems = this.state.contactItems;
+        this.props.deleteContact({ id });
+        /*let newContactItems = this.state.contactItems;
         let selectedIndex;
         newContactItems.map(function(item, index) {
             if(item.get('id') === id) {
@@ -30,7 +31,7 @@ class ContactList extends Component {
             } else return {};
         });
         let itemDel = newContactItems.delete(selectedIndex);
-        this.setState({ contactItems : itemDel });
+        this.setState({ contactItems : itemDel });*/
     }   
 
     editCard(id, newValue, field) {
