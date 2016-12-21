@@ -1,7 +1,7 @@
-let a = [{name : 'vufy'},{name : 'hiiiii'}];
+let a = [{name : {name : 'hiiiii'}}];
       // a.name = ['abc'];
       console.log(a[0].name);
-      let b = fromJS(a[1]);
+      let b = fromJS(a[0]);
       // let d = a.pop('0')
       console.log(b.toJS())
       // console.log(d.toJS())

@@ -9,6 +9,5 @@ import ContactList from './ContactList';
 ReactDOM.render((
 <Router history={browserHistory}>
         <Route path="/" component={ App }/>
-        <Route path="/AddNew" component={ AddNew } addContact={ContactList.addContact} />
 </Router>
 ), document.getElementById('root'))

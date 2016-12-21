@@ -1,41 +1,40 @@
 
 .Name {
- 
- padding-bottom: 1px;
- padding-top: 1px;
- padding-left: 1px;
- padding-right: 1px;
+    padding-bottom: 2px;
+    padding-top: 2px;
+    padding-left: 2px;
+    padding-right: 2px;
 }
 
 .Age {
-
- padding-bottom: 1px;
- padding-top: 1px;
- padding-left: 1px;
- padding-right: 1px;
+    padding-bottom: 2px;
+    padding-top: 2px;
+    padding-left: 2px;
+    padding-right: 2px;
 }
 .num {
- 
- padding-bottom: 1px;
- padding-top: 1px;
- padding-left: 1px;
- padding-right: 1px;  
+    padding-bottom: 2px;
+    padding-top: 2px;
+    padding-left: 2px;
+    padding-right: 2px;
 }
 
 .id {
- padding-bottom: 1px;
- padding-top: 1px;
- padding-left: 1px;
- padding-right: 1px; 
+    padding-bottom: 2px;
+    padding-top: 2px;
+    padding-left: 2px;
+    padding-right: 2px;
 }
 
 .foredit{ 
-    visibility : hidden; 
-    margin-left: 45pc;
+    visibility : hidden;
+    position: absolute;
+    right: 10px; 
 }
 
 .addButton{
     position: absolute;
+    left: 50px;
     padding-bottom: 1pc;
     padding-top: 1pc;
     padding-left: 2pc;
@@ -45,7 +44,7 @@
 .resetButton{
     position: absolute;
     margin-left: 10pc;
-    padding-bottom: 1pc;
+    padding-bottom: 1pc; 
     padding-top: 1pc;
     padding-left: 2pc;
     padding-right: 2pc;
@@ -62,6 +61,8 @@
 
 .visible {
     visibility: visible;
+    position: absolute;
+    right: 400px;; 
 }
 
 .makeVisible{
@@ -85,20 +86,17 @@
      padding-top: 1pc;
      padding-left: 2pc;
      padding-right: 2pc;
-     text-align: left;
-     
 }
 
 .Card {
- background-color: gray;
- padding-bottom: 0.5pc;
- padding-top: 0.5pc;
- padding-left: 3pc;
- padding-right: 3pc;
- margin-left: 8pc;
- text-align: left;
- border: 1px solid white;
- position: absolute;
+    background-color: gray;
+    padding-bottom: 0.5pc;
+    padding-top: 0.5pc;
+    padding-left: 3pc;
+    padding-right: 3pc;
+    margin-left: 150px;
+    border: 1px solid white;
+    position: absolute;
 }
 
 .Deletebutton {
@@ -106,17 +104,19 @@
     padding-top: 1pc;
     padding-left: 2pc;
     padding-right: 2pc;
-    margin-left: 8pc;
+    margin-left: 150px;
     position: absolute;
+    margin-top: 90px;
 }
 .Editbutton {
-    margin-left: 45pc;
-    text-align: right;
+    right: 485px;
+    /*margin-left: 600px;*/
     padding-bottom: 1pc;
     padding-top: 1pc;
     padding-left: 2pc;
     padding-right: 2pc; 
-    
+    position: absolute;
+    margin-top: 90px;
 }
 .Cards{
     border: 1px solid black;
@@ -124,8 +124,7 @@
     padding: 5px;
     margin: 5px;
     padding-right: 45pc;
-    /*margin-bottom: 1pc;
-    margin-top: 1pc;*/
     margin-left: 1pc;
-  /*  margin-right: 1pc;*/
+    height: 175px;
+   
 }
