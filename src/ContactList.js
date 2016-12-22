@@ -35,20 +35,25 @@ class ContactList extends Component {
     }   
 
     editCard(id, newValue, field) {
-        let newCardItems=this.state.contactItems;
-        let newArray = newCardItems.map(function(item) {
-            if(item.get('id') === id) {
-                let editItem = item.set(field , newValue);
-                return editItem;
-            }
-            else return item;
-        });
-        this.setState({ contactItems : newArray })
+        this.props.editContact({id,newValue,field});
+
+        // let newCardItems=this.state.contactItems;
+        // let newArray = newCardItems.map(function(item) {
+        //     if(item.get('id') === id) {
+        //         let editItem = item.set(field , newValue);
+        //         return editItem;
+        //     }
+        //     else return item;
+        // });
+        // this.setState({ contactItems : newArray })
     }
 
     addNewContactCard(e, field) {
-        const newItemObj = this.state.newItem.set(field, e.target.value);
-        this.setState({ newItem: newItemObj});
+        // this.props.newContact({ item: { [field]: e.target.value } });
+        const item = e.target.value;
+        this.props.newContact({field ,item} )
+        // const newItemObj = this.state.newItem.set(field, e.target.value);
+        // this.setState({ newItem: newItemObj});
     }
 
     addContactCard() {
@@ -78,6 +83,7 @@ class ContactList extends Component {
             </ContactCard>);
         }, this);
         var toMakeVisible=(this.state.showAddContactCardFlag? 'visible' : 'hidden');
+        console.log(this.props.ContactList.toJS())
         return (
             <div>{returnObj}
             <button type="button" className="addContactButton" onClick={()=>this.showAddContactCardForm()}>Add</button>
