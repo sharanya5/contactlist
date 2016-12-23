@@ -4,7 +4,8 @@ export const constants = {
     INITIAL_LIST: 'INITIAL_LIST',
     DELETE_CONTACT: 'DELETE_CONTACT',
     EDIT_CONTACT: 'EDIT_CONTACT',
-    ADD_NEW_CONTACT: 'ADD_NEW_CONTACT'
+    ADD_NEW_CONTACT: 'ADD_NEW_CONTACT',
+    ADD_CONTACT_TO_LIST: 'ADD_CONTACT_TO_LIST'
 };
 
 export const actions = {
@@ -19,8 +20,12 @@ export const actions = {
         type: constants.EDIT_CONTACT,
         payload
     }),
-    newContact: (payload) => ({
+    addNewContact: (payload) => ({
         type: constants.ADD_NEW_CONTACT,
+        payload
+    }),
+    addContactToList: (payload) => ({
+        type: constants.ADD_CONTACT_TO_LIST,
         payload
     })
 };
@@ -73,17 +78,21 @@ export default function reducer(state = initialState, action = {}) {
         }
 
         case constants.ADD_NEW_CONTACT:
-        {
-           console.log(action.payload.item);
-            console.log(action.payload.field);
-            console.log(state.id)
-            const newObj = fromJS({})
-            newObj[action.payload.field]= action.payload.item;
-            console.log(newObj.toJS())
-            state.set(newObj);
-            // const newState = state;
+        {   
+            let newItemObj = {};
+            newItemObj = state.push( action.payload.item );
+            console.log(newItemObj.toJS())
             console.log(state.toJS())
+            let newState =  (newItemObj);
+            console.log(newState.toJS())
+            // console.log(newState.toJS())
             // return newState.push(fromJS(action.payload.item))
+        }
+
+        case constants.ADD_CONTACT_TO_LIST:
+        {
+            console.log("=========");
+            // state = state;
         }
 
         default: return state;

@@ -23,41 +23,25 @@ class ContactList extends Component {
 
     deleteCard(id) {
         this.props.deleteContact({ id });
-        /*let newContactItems = this.state.contactItems;
-        let selectedIndex;
-        newContactItems.map(function(item, index) {
-            if(item.get('id') === id) {
-                return selectedIndex = index;
-            } else return {};
-        });
-        let itemDel = newContactItems.delete(selectedIndex);
-        this.setState({ contactItems : itemDel });*/
     }   
 
     editCard(id, newValue, field) {
         this.props.editContact({id,newValue,field});
-
-        // let newCardItems=this.state.contactItems;
-        // let newArray = newCardItems.map(function(item) {
-        //     if(item.get('id') === id) {
-        //         let editItem = item.set(field , newValue);
-        //         return editItem;
-        //     }
-        //     else return item;
-        // });
-        // this.setState({ contactItems : newArray })
     }
 
     addNewContactCard(e, field) {
         // this.props.newContact({ item: { [field]: e.target.value } });
-        const item = e.target.value;
-        this.props.newContact({field ,item} )
+        const item = {};
+        item[field] = e.target.value;
+        console.log(item);
+        this.props.addNewContact( {item} )
         // const newItemObj = this.state.newItem.set(field, e.target.value);
         // this.setState({ newItem: newItemObj});
     }
 
     addContactCard() {
-        this.setState({ contactItems: this.state.contactItems.push(fromJS(this.state.newItem))});  
+        this.props.addContactToList();
+        // this.setState({ ContactList: this.props.ContactList.push(fromJS(this.state.newItem))});  
     }
 
     showAddContactCardForm(){
