@@ -4,8 +4,7 @@ export const constants = {
     INITIAL_LIST: 'INITIAL_LIST',
     DELETE_CONTACT: 'DELETE_CONTACT',
     EDIT_CONTACT: 'EDIT_CONTACT',
-    ADD_NEW_CONTACT: 'ADD_NEW_CONTACT',
-    ADD_CONTACT_TO_LIST: 'ADD_CONTACT_TO_LIST'
+    ADD_CONTACT_TO_LIST: 'ADD_CONTACT_TO_LIST',
 };
 
 export const actions = {
@@ -18,10 +17,6 @@ export const actions = {
     }),
     editContact: (payload) => ({
         type: constants.EDIT_CONTACT,
-        payload
-    }),
-    addNewContact: (payload) => ({
-        type: constants.ADD_NEW_CONTACT,
         payload
     }),
     addContactToList: (payload) => ({
@@ -57,16 +52,16 @@ export default function reducer(state = initialState, action = {}) {
         {
             let RequiredIndex;
             state.map(function(item,index){
-                if(item.get('id')===action.payload.id){
+                if(item.get('id') === action.payload.id){
                     return RequiredIndex = index;                   
                 }else return {};
         });
             state = state.delete(RequiredIndex);
+            return state;            
         }
 
         case constants.EDIT_CONTACT:
         {
-            console.log(action.payload.field)
             let newArray = state.map(function(item) {
                 if(item.get('id') === action.payload.id) {
                     let editItem = item.set(action.payload.field , action.payload.newValue);
@@ -75,24 +70,12 @@ export default function reducer(state = initialState, action = {}) {
                 else return item;
             });
             state = newArray
-        }
-
-        case constants.ADD_NEW_CONTACT:
-        {   
-            let newItemObj = {};
-            newItemObj = state.push( action.payload.item );
-            console.log(newItemObj.toJS())
-            console.log(state.toJS())
-            let newState =  (newItemObj);
-            console.log(newState.toJS())
-            // console.log(newState.toJS())
-            // return newState.push(fromJS(action.payload.item))
+            return state;
         }
 
         case constants.ADD_CONTACT_TO_LIST:
         {
-            console.log("=========");
-            // state = state;
+            state = state.push(fromJS(action.payload))
         }
 
         default: return state;

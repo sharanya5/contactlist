@@ -30,18 +30,12 @@ class ContactList extends Component {
     }
 
     addNewContactCard(e, field) {
-        // this.props.newContact({ item: { [field]: e.target.value } });
-        const item = {};
-        item[field] = e.target.value;
-        console.log(item);
-        this.props.addNewContact( {item} )
-        // const newItemObj = this.state.newItem.set(field, e.target.value);
-        // this.setState({ newItem: newItemObj});
+        const newItemObj = this.state.newItem.set(field, e.target.value);
+        this.setState({ newItem: newItemObj});
     }
 
     addContactCard() {
-        this.props.addContactToList();
-        // this.setState({ ContactList: this.props.ContactList.push(fromJS(this.state.newItem))});  
+        this.props.addContactToList(this.state.newItem);
     }
 
     showAddContactCardForm(){
@@ -53,10 +47,11 @@ class ContactList extends Component {
         this.refs.age.value = '';
         this.refs.id.value = '';
         this.refs.ph_no.value = '';
-        this.setState({ newItem: {}})
+        this.setState({ newItem: fromJS({})})
     }
 
     render() {
+        console.log(this.props.ContactList.toJS())        
         let returnObj=[];
         this.props.ContactList.forEach(function(item) {
                 returnObj.push(<ContactCard
@@ -67,7 +62,6 @@ class ContactList extends Component {
             </ContactCard>);
         }, this);
         var toMakeVisible=(this.state.showAddContactCardFlag? 'visible' : 'hidden');
-        console.log(this.props.ContactList.toJS())
         return (
             <div>{returnObj}
             <button type="button" className="addContactButton" onClick={()=>this.showAddContactCardForm()}>Add</button>
