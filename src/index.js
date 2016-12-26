@@ -5,6 +5,7 @@ import './index.css';
 import { Route, browserHistory, Router } from 'react-router';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
+import AddNew from './AddNew';
 
 import reducer from './redux';
 
@@ -14,6 +15,7 @@ ReactDOM.render((
     <Provider store={store} key="provider">
             <Router history={browserHistory}>
                 <Route path="/" component={ App }/>
+                <Route path="/AddNew" component={ AddNew }/>
             </Router>
     </Provider>
 ), document.getElementById('root'));

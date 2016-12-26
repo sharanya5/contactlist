@@ -1,5 +1,6 @@
 .addButton{
     position: absolute;
+    margin-left: 7pc;
     padding-bottom: 1pc;
      padding-top: 1pc;
      padding-left: 2pc;
@@ -8,7 +9,16 @@
 
 .resetButton{
     position: absolute;
-    margin-left: 10pc;
+    margin-left: 18pc;
+    padding-bottom: 1pc;
+     padding-top: 1pc;
+     padding-left: 2pc;
+     padding-right: 2pc;
+}
+
+.backButton{
+    position: absolute;
+    margin-left: 2pc;
     padding-bottom: 1pc;
      padding-top: 1pc;
      padding-left: 2pc;

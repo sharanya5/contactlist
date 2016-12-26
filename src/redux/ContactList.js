@@ -76,6 +76,7 @@ export default function reducer(state = initialState, action = {}) {
         case constants.ADD_CONTACT_TO_LIST:
         {
             state = state.push(fromJS(action.payload))
+            return state;
         }
 
         default: return state;
