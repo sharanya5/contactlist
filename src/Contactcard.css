@@ -1,0 +1,130 @@
+
+.Name {
+    padding-bottom: 2px;
+    padding-top: 2px;
+    padding-left: 2px;
+    padding-right: 2px;
+}
+
+.Age {
+    padding-bottom: 2px;
+    padding-top: 2px;
+    padding-left: 2px;
+    padding-right: 2px;
+}
+.num {
+    padding-bottom: 2px;
+    padding-top: 2px;
+    padding-left: 2px;
+    padding-right: 2px;
+}
+
+.id {
+    padding-bottom: 2px;
+    padding-top: 2px;
+    padding-left: 2px;
+    padding-right: 2px;
+}
+
+.hidden{
+    visibility : hidden;
+    position: absolute;
+    right: 10px; 
+}
+
+.addButton{
+    position: absolute;
+    left: 50px;
+    padding-bottom: 1pc;
+    padding-top: 1pc;
+    padding-left: 2pc;
+    padding-right: 2pc; 
+}
+
+.resetButton{
+    position: absolute;
+    margin-left: 10pc;
+    padding-bottom: 1pc; 
+    padding-top: 1pc;
+    padding-left: 2pc;
+    padding-right: 2pc;
+}
+
+.addContactButton{
+    position: absolute;
+    margin-left: 35pc;
+    padding-bottom: 1pc;
+    padding-top: 1pc;
+    padding-left: 2pc;
+    padding-right: 2pc;
+}
+
+.visible {
+    visibility: visible;
+    position: absolute;
+    right: 400px;; 
+}
+
+.makeVisible{
+    visibility : visible ;
+}
+
+.header{
+    text-align: center;
+}
+ 
+.firstdiv{
+     padding-bottom: 1pc;
+     padding-top: 1pc;
+     padding-left: 2pc;
+     padding-right: 2pc; 
+     visibility: hidden;   
+}
+
+.secdiv{
+     padding-bottom: 1pc;
+     padding-top: 1pc;
+     padding-left: 2pc;
+     padding-right: 2pc;
+}
+
+.Card {
+    background-color: gray;
+    padding-bottom: 0.5pc;
+    padding-top: 0.5pc;
+    padding-left: 3pc;
+    padding-right: 3pc;
+    margin-left: 150px;
+    border: 1px solid white;
+    position: absolute;
+}
+
+.Deletebutton {
+    padding-bottom: 1pc;
+    padding-top: 1pc;
+    padding-left: 2pc;
+    padding-right: 2pc;
+    margin-left: 150px;
+    position: absolute;
+    margin-top: 90px;
+}
+.Editbutton {
+    right: 485px;
+    /*margin-left: 600px;*/
+    padding-bottom: 1pc;
+    padding-top: 1pc;
+    padding-left: 2pc;
+    padding-right: 2pc; 
+    position: absolute;
+    margin-top: 90px;
+}
+.Cards{
+    border: 1px solid black;
+    background-color: black;
+    padding: 5px;
+    margin: 5px;
+    padding-right: 45pc;
+    margin-left: 1pc;
+    height: 175px;
+   
+}
