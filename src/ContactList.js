@@ -24,7 +24,6 @@ class ContactList extends Component {
     }
 
     render() {
-        console.log(this.props.ContactList.toJS())        
         let returnObj=[];
         this.props.ContactList.forEach(function(item) {
                 returnObj.push(<ContactCard

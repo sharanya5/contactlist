@@ -24,3 +24,15 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+.searchBar {
+  margin-left: 1pc;
+  height: 2px;
+  width: 10px;
+  position: relative;
+}
+
+.searchButton {
+ position: relative;
+ margin-left: 200px;
+}

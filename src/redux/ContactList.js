@@ -5,6 +5,7 @@ export const constants = {
     DELETE_CONTACT: 'DELETE_CONTACT',
     EDIT_CONTACT: 'EDIT_CONTACT',
     ADD_CONTACT_TO_LIST: 'ADD_CONTACT_TO_LIST',
+    SEARCH_FOR_INPUT: 'SEARCH_FOR_INPUT'
 };
 
 export const actions = {
@@ -21,6 +22,10 @@ export const actions = {
     }),
     addContactToList: (payload) => ({
         type: constants.ADD_CONTACT_TO_LIST,
+        payload
+    }),
+    searchForInput: (payload) => ({
+        type: constants.SEARCH_FOR_INPUT,
         payload
     })
 };
@@ -56,7 +61,12 @@ export default function reducer(state = initialState, action = {}) {
                     return RequiredIndex = index;                   
                 }else return {};
         });
-            state = state.delete(RequiredIndex);
+            var confirmDel = confirm("are you sure want to delete")
+            if(confirmDel===true){
+                state = state.delete(RequiredIndex);
+                return state;
+            }
+            else 
             return state;            
         }
 
@@ -76,7 +86,19 @@ export default function reducer(state = initialState, action = {}) {
         case constants.ADD_CONTACT_TO_LIST:
         {
             state = state.push(fromJS(action.payload))
+            history.pushState(state,'','/')
             return state;
+        }
+
+        case constants.SEARCH_FOR_INPUT:
+        {
+        let arr = state.map(function(item){
+          if(item.get('name')===action.payload.inputText){
+              console.log("found")
+              return item;
+          } else 
+          return {};
+        })
         }
 
         default: return state;

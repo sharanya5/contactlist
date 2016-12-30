@@ -3,6 +3,7 @@ import './AddNew.css';
 import { fromJS } from 'immutable';
 import { actions } from './redux/ContactList';
 import { connect } from 'react-redux';
+import { Field, reduxForm } from 'redux-form';
 
 class AddNew extends Component {
 
@@ -12,9 +13,10 @@ class AddNew extends Component {
         this.addNewContactCard = this.addNewContactCard.bind(this);
         this.addContactCard = this.addContactCard.bind(this);
         this.resetForm = this.resetForm.bind(this);
+        this.validate = this.validate.bind(this);
     }
 
-     componentWillMount() {
+    componentWillMount() {
         this.props.initialList();
     }
     
@@ -35,28 +37,50 @@ class AddNew extends Component {
         this.setState({ newItem: fromJS({})})
     }
 
-    render() {
-        console.log(this.props.ContactList.toJS())
-        return (
-            <div>
-                <h1 className="header">new contact </h1>
-                <form>
-                <div className="secdiv" ref="form">
-                    New id   : <input type="text" ref="id" value={this.state.newItem.id} onChange={(e)=>this.addNewContactCard(e,'id')}/> <br/>
-                    New Name : <input type="text" ref="name" value={this.state.newItem.name} onChange={(e)=>this.addNewContactCard(e,'name')}/><br/>
-                    New Age  : <input type="text" ref="age" value={this.state.newItem.age} onChange={(e)=>this.addNewContactCard(e,'age')} /><br/>
-                    New num : <input type="text" ref="ph_no" value={this.state.newItem.ph_no} onChange={(e)=>this.addNewContactCard(e,'ph_no')}/>
-                </div>
-                <div>
-                    <button type="button" className="backButton"><a href="/">Back</a></button>
-                    <button type="button" className="addButton" onClick={()=>this.addContactCard()}>Add</button>
-                    <button type="button" className="resetButton" onClick={()=>this.resetForm()}>Reset</button>
-                </div>
-                </form>
-            </div>
-        );
+    validate(values){
+        let errors={};
+        if(!values.id){
+            errors.id = 'Required';
+        }
+       if(!values.name){
+            errors.name = 'Required';
+        }
+        return errors
     }
+
+   render(){
+    return (<div>
+        <h1>New Contact</h1>
+        <form onSubmit={(e)=>this.addNewContactCard(e)}>
+            <div>
+                <label>id</label>
+                <Field name="id" type="text" component="input" placeholder="id"/>
+            </div>
+            <div>
+                <label>name</label>
+                <Field name="name" type="text" component="input" placeholder="name"/>
+            </div>
+            <div>
+                <label>age</label>
+                <Field name="age" type="text" component="input" placeholder="age"/>
+            </div>
+            <div>
+                <label>phone number</label>
+                <Field name="phone_num" type="text" component="input" placeholder="phone number"/>
+            </div>
+            <div>
+                <label>email</label>
+                <Field name="email" type="email" component="input" placeholder="email"/>
+            </div>
+            <button onSubmit={(e)=>this.addNewContactCard(e)} >add </button>
+        </form>
+    </div>);
 }
+}
+
+AddNew = reduxForm({
+    form: 'AddNew'
+})(AddNew)
 
 const mapStateToProps = (state) => {
         return {
@@ -64,8 +88,8 @@ const mapStateToProps = (state) => {
         }
 };
 
-const AddNewComponent = connect(
+AddNew = connect(
     mapStateToProps,
-    actions
+    actions,
 )(AddNew);
-export default AddNewComponent;
+export default AddNew;
